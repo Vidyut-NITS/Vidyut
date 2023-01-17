@@ -68,7 +68,7 @@ We have tracked validation accuracy and saved the weights of model when performa
 
 + #### Confusion Matrix
 
-<img width="432" alt="Screenshot 2023-01-17 at 6 24 32 PM" src="https://user-images.githubusercontent.com/77192368/212905401-4aae8d1a-723c-4101-9a58-92e73f834e17.jpeg">
+<img width="432" src="https://user-images.githubusercontent.com/39759092/212966035-371bffff-f380-4865-9573-68b59670b97e.png">
 
 + #### Classification report
 <img width="432" alt="Screenshot 2023-01-17 at 6 24 32 PM" src="https://user-images.githubusercontent.com/77192368/212906419-91ee72cd-e642-4248-8a64-07ca37430dfe.jpeg">
