@@ -38,8 +38,9 @@ There are 192 images used for training and 54 images used for testing purposes. 
 
 
 
-We have performed Data Augmentation by first rescaling image to 224x224 and normalising the images.
-For training images we have performed additional data augmentation as dataset is too small.
+We have first rescaled the images to 224x224 and normalised them. 
+
+For training images we have performed additional data augmentation as dataset is very small.
 
 ## 🔀 Methodology
 
@@ -51,27 +52,22 @@ In order to solve multi-class image classification problem, we have experimented
 4. EFFICIENTNET (B0 & B4)
 5. EFFICIENTNETV2
 
-We have found that RESNET18 shows highest performance with 1 extra layer for classification and SGD for optimizer ( learning rate = 0.001, momentum = 0.9 ), batch size = 8
+We have found that RESNET18 shows highest performance with 1 extra layer for classification and SGD for optimizer ( learning rate = 0.001, momentum = 0.9 ), batch size = 8. 
 
-##### Early stopping: 
+We experimented with freezing layers but were not able to get high accuracy when the majority of the layers were frozen. This may be due to the model being pretrained on Imagenet, which may not have had data with similar features as the electrical dataset used here.
+
++ #### Early stopping: 
 We have tracked validation accuracy and saved the weights of model when performance was highest as after too many epochs model starts to overfit. 
-
-
-
-![acc](https://user-images.githubusercontent.com/39759092/213529038-53b495c7-b1cf-40ef-8496-69ac87d2f1b0.png)
 
 
 ### ⚖️ Judging Metrics
 + #### Accuracy, Loss vs Epochs
 
-<p float="left">
-<img width="432" alt="Screenshot 2023-01-17 at 6 24 32 PM" src="https://user-images.githubusercontent.com/39759092/213529038-53b495c7-b1cf-40ef-8496-69ac87d2f1b0.png">
-<img width="432" alt="Screenshot 2023-01-17 at 6 27 30 PM" src="https://user-images.githubusercontent.com/39759092/213528945-a027e855-d79f-4f11-b1bb-eb4fe0e597e9.png">
-</p>
+<img width="432" src="https://user-images.githubusercontent.com/39759092/213529038-53b495c7-b1cf-40ef-8496-69ac87d2f1b0.png">
+<img width="432" src="https://user-images.githubusercontent.com/39759092/213528945-a027e855-d79f-4f11-b1bb-eb4fe0e597e9.png">
 
 + #### Confusion Matrix
-
-<img width="432" src="https://user-images.githubusercontent.com/39759092/212966035-371bffff-f380-4865-9573-68b59670b97e.png">
+<img width="432" src="https://user-images.githubusercontent.com/39759092/213531187-8f8baac4-bdea-4ccb-9747-3fb8a5e6abab.png">
 
 + #### Classification report
 <img width="432" src="https://user-images.githubusercontent.com/39759092/213529182-7ea9ded3-fde3-4a6d-9c01-b2113addf30f.png">
